@@ -1,5 +1,8 @@
 import Container from 'react-bootstrap/Container'
 import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import Films from './pages/Films'
+import People from './pages/People'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
@@ -8,11 +11,11 @@ const App = () => {
 	return (
 		<div id="App">
 			<Container>
-				<Routes>
-					<Route path="/" element={<h1>HomePage</h1>} />
-					<Route path="/people" element={<h1>People</h1>} />
-					<Route path="/films" element={<h1>FilmsPage</h1>} />
-				</Routes>
+				  <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/people" element={<People />} />
+              <Route path="/films" element={<Films />} />
+			  	</Routes>
 			</Container>
 		</div>
 	)
