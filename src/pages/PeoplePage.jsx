@@ -1,6 +1,6 @@
     import React from 'react'
 
-    const People = () => {
+    const PeoplePage = () => {
     return (
         <div>
             <h1>People Page!</h1>
@@ -8,4 +8,4 @@
     )
     }
 
-    export default People
+    export default PeoplePage

@@ -2,21 +2,21 @@ import Container from 'react-bootstrap/Container'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import Navigation from './components/Navgiation'
-import Films from './pages/Films'
-import People from './pages/People'
+import FilmsPage from './pages/FilmsPage'
+import PeoplePage from './pages/PeoplePage'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 const App = () => {
-
-	return (
+  
+  return (
 		<div id="App">
       <Navigation />
 
 			<Container>
 				  <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/people" element={<People />} />
-              <Route path="/films" element={<Films />} />
+              <Route path="/people" element={<PeoplePage />} />
+              <Route path="/films" element={<FilmsPage />} />
 			  	</Routes>
 			</Container>
 		</div>
