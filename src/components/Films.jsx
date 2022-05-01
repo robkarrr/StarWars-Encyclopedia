@@ -4,35 +4,47 @@ import {Button, Row, Col, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 const Films = () => {
-const [films, setFilms] = useState("")
-const getFilms = async () => {
-    const data = await SWAPI.getAllFilms()
-    setFilms(data)
-    console.log(data)
-}
+    const [films, setFilms] = useState("")
+    const [error, setError] = useState("")
+    const [loading, setLoading] = useState(false)
 
-useEffect(() => {
-    getFilms()
+    const getFilms = async () => {
+        setLoading(true)
+        try{
+            const data = await SWAPI.getAllFilms()
+            setFilms(data)
+            setLoading(false)
+        }catch(err){
+            setError(err.message)
+        }
 
-},[])
-return (
-    <>
-        {films && films.results.map((film, index) => (
-            <div>
-                <Card style={{ width: '18rem' }} key={index}>
-                    <Card.Body>
-                    <Card.Title>{film.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-            </div>
-        ))}
-    </>
-)
-}
+    }
 
-export default Films
+    useEffect(() => {
+        getFilms()
+
+    },[])
+    return (
+        <>
+            {error && {
+                error
+            }}
+
+            {loading && (
+                <h1 className="text-center mt-5">Loading...</h1>
+            )}
+
+            {films && films.results.map((film, index) => (
+                <div>
+                    <Card key={index} >
+                        <Card.Body>
+                        <Card.Title>{film.title}</Card.Title>
+                        </Card.Body>
+                    </Card>
+                </div>
+            ))}
+        </>
+    )
+    }
+
+    export default Films
