@@ -29,6 +29,8 @@ const People = () => {
 
     return (
         <>
+            <h1>People</h1>
+
             {error && {
                 error
             }}
@@ -36,21 +38,23 @@ const People = () => {
             {loading && (
                 <h1 className="text-center mt-5">Loading...</h1>
             )}
-            <h1>People</h1>
             {people && people.results.map((person, index) => (
-                <div>
-                    <Card key={index}>
-                        <Card.Body>
-                        <Card.Title>{person.name}</Card.Title>
-                        <Button
-                        as = {Link}
-                        to = {`/people/${GetURLId(person.url)}`}
-                        >
-                            Read more ➡
-                        </Button>
-                        </Card.Body>
-                    </Card>
-                </div>
+                <>
+                    <div>
+                        <Card key={index}>
+                            <Card.Body>
+                            <Card.Title>{person.name}</Card.Title>
+                            <Button
+                            as = {Link}
+                            to = {`/people/${GetURLId(person.url)}`}
+                            >
+                                Read more ➡
+                            </Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </>
+                
             ))}
         </>
     )

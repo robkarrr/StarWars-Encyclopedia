@@ -27,6 +27,8 @@ const Films = () => {
     },[])
     return (
         <>
+            <h1>Films</h1>
+
             {error && {
                 error
             }}
@@ -37,7 +39,7 @@ const Films = () => {
 
             {films && films.results.map((film, index) => (
                 <div>
-                    <Card key={index} >
+                    <Card key={index}>
                         <Card.Body>
                         <Card.Title>{film.title}</Card.Title>
                         <Button

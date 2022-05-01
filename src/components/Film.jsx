@@ -9,12 +9,14 @@ const Film = () => {
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const {id} = useParams()
+    const [people, setPeople] = useState([])
 
     const getOneFilm = async (id) => {
         setLoading(true)
         try{
             const data = await SWAPI.getOneFilm(id)
             setFilm(data)
+            setPeople(data.people)
             setLoading(false)
             console.log(data)
         }catch(err){

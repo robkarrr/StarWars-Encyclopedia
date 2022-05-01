@@ -5,6 +5,7 @@ import Navigation from './components/Navgiation'
 import FilmsPage from './pages/FilmsPage'
 import PeoplePage from './pages/PeoplePage'
 import FilmPage from './pages/FilmPage'
+import PersonPage from './pages/PersonPage'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
 				  <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/people" element={<PeoplePage />} />
-              <Route path="/people/:id" element={<h1>People</h1>} />
+              <Route path="/people/:id" element={<PersonPage />} />
               <Route path="/films" element={<FilmsPage />} />
               <Route path="/films/:id" element={<FilmPage />} />
               <Route path="*" element={<h1 className="text-center mt-5">Page not found...</h1>} />  
