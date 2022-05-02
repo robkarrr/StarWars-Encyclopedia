@@ -40,7 +40,7 @@ const People = () => {
             )}
             {people && people.results.map((person, index) => (
                 <>
-                    <div>
+                    <div className="card-wrapper col-3">
                         <Card key={index}>
                             <Card.Body>
                             <Card.Title>{person.name}</Card.Title>
@@ -53,9 +53,27 @@ const People = () => {
                             </Card.Body>
                         </Card>
                     </div>
+
                 </>
-                
+
             ))}
+
+
+            <div className="d-flex PageButton-wrapper">
+                <Button
+                    onClick={() => setPage(prevValue => prevValue -1)}
+                    disabled = {!people.previous}
+                >
+                    Prev
+                </Button>
+                <p>{page}/9</p>
+                <Button
+                    onClick={() => setPage(prevValue => prevValue +1)}
+                    disabled = {!people.next}
+                >
+                    Next
+                </Button>
+            </div>
         </>
     )
 }
