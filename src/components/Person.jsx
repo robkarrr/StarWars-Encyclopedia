@@ -41,7 +41,7 @@ const Person = () => {
         )}
 
 
-        <Card border="dark" className="mt-5">
+        <Card className="mt-5">
             <Card.Header
             >People</Card.Header>
             <Card.Body>
@@ -90,7 +90,7 @@ const Person = () => {
                     <ListGroup key={index} className="col-4 ">
                     <ListGroup.Item
                         as={Link}
-                        to={`/film/${GetURLId(film)}`}
+                        to={`/films/${GetURLId(film)}`}
                         className=""
                     >{`Film ${GetURLId(film)}`}</ListGroup.Item>
                     </ListGroup>

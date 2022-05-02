@@ -1,5 +1,6 @@
 body{
-  background: url('./images/pixel_stars.jpeg')
+  background: url('./images/pixel_stars.jpeg');
+  color: white ;
 }
 
 
@@ -19,6 +20,7 @@ body{
 
 .card{
   margin: 0.5rem;
+  color: black;
 }
 
 .film-characters-wrapper{
@@ -44,4 +46,5 @@ body{
 /* back button */
 .back{
   margin: 1rem;
+  border-color: white;
 }
