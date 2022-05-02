@@ -57,23 +57,28 @@ const Film = () => {
             <Card.Title>
                 <h4>General info</h4>
             </Card.Title>            
+            <div className="info-wrapper">
+                    <div>
+                        <Row>
+                        {`Episode: ${film.episode_id}`}
+                        </Row>
+                    
+                        <Row>
+                            {`Producer: ${film.producer}`}
+                        </Row>
+                    </div>
 
-            <Row>
-                {`Episode ${film.episode_id}`}
-            </Row>
+                    <div>                        
+                        <Row>
+                            {`Director: ${film.director}`}
+                        </Row>
+
+                        <Row>
+                            {`Release Date: ${film.release_date}`}
+                        </Row>
+                    </div>
+            </div>
             
-            <Row>
-                {`Producer: ${film.producer}`}
-            </Row>
-
-            <Row>
-                {`Director: ${film.director}`}
-            </Row>
-
-            <Row>
-                {`Release Date: ${film.release_date}`}
-            </Row>
-
             <hr />
 
             <Card.Title>
@@ -99,6 +104,7 @@ const Film = () => {
              <Button
                 as = {Link}
                 to = {`/films`}
+                className="btn-dark col-3 back"
             >
                     Back
             </Button>

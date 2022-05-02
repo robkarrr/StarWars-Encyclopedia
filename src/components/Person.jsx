@@ -51,7 +51,7 @@ const Person = () => {
             <Card.Title>
                 <h4>General info</h4>
             </Card.Title>            
-            <div className="info-wrapper-person">
+            <div className="info-wrapper">
                 <div>
                       <Row>
                         {`Birth Year: ${person.birth_year}`}

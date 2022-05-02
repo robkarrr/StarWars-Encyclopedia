@@ -30,7 +30,7 @@
 
 
 /* Info wrapper div in person component */
-.info-wrapper-person{
+.info-wrapper{
   display: flex;
   justify-content: space-around;
   font-size:1.5rem;
