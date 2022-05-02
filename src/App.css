@@ -1,14 +1,11 @@
 
 .PageButton-wrapper{
   justify-content: space-between;
+  margin: 1rem;
 }
 
 .row{
   padding: 1rem;
-}
-
-.PageButton-wrapper{
-  margin: 1rem;
 }
 
 .card-wrapper{
@@ -26,6 +23,21 @@
   justify-content: center
 }
 
+
 .list-group-item{
   margin: 0.5rem;
+}
+
+
+/* Info wrapper div in person component */
+.info-wrapper-person{
+  display: flex;
+  justify-content: space-around;
+  font-size:1.5rem;
+}
+
+
+/* back button */
+.back{
+  margin: 1rem;
 }
