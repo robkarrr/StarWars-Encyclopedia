@@ -91,7 +91,6 @@ const Person = () => {
                     <ListGroup.Item
                         as={Link}
                         to={`/films/${GetURLId(film)}`}
-                        className=""
                     >{`Film ${GetURLId(film)}`}</ListGroup.Item>
                     </ListGroup>
                 ))}  
