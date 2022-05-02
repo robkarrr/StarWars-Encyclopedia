@@ -3,6 +3,8 @@ import SWAPI from '../services/SWAPI'
 import {Button, Row, Col, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {useParams} from 'react-router-dom'
+import {GetURLId} from '../helper/GetURLId'
+import { ListGroup } from 'react-bootstrap'
  
 const Film = () => {
     const [film, setFilm] = useState("")
@@ -16,7 +18,7 @@ const Film = () => {
         try{
             const data = await SWAPI.getOneFilm(id)
             setFilm(data)
-            setPeople(data.people)
+            setPeople(data.characters)
             setLoading(false)
             console.log(data)
         }catch(err){
@@ -40,6 +42,17 @@ const Film = () => {
 
         <div>
             <h2>{film.title}</h2>
+        </div>
+
+        <div className="character-wrapper">
+          {people.map(person => (
+            <ListGroup>
+              <ListGroup.Item
+                as={Link}
+                to={`/people/${GetURLId(person)}`}
+              >{`Character ${GetURLId(person)}`}</ListGroup.Item>
+            </ListGroup>
+          ))}  
         </div>
     </>
   )
