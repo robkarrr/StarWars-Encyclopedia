@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import SWAPI from '../services/SWAPI'
-import {Button, Row, Col, Card} from 'react-bootstrap'
+import {Button, Row, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {GetURLId} from '../helper/GetURLId'
 
@@ -28,30 +28,40 @@ const Films = () => {
     return (
         <>
             <h1>Films</h1>
-
-            {error && {
-                error
-            }}
-
             {loading && (
-                <h1 className="text-center mt-5">Loading...</h1>
+                 <h1 className="text-center mt-5">Loading...</h1>
             )}
 
-            {films && films.results.map((film, index) => (
-                <div key={index}>
-                    <Card>
-                        <Card.Body>
-                        <Card.Title>{film.title}</Card.Title>
-                        <Button
-                        as = {Link}
-                        to = {`/films/${GetURLId(film.url)}`}
-                        >
-                            Read more ➡
-                        </Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-            ))}
+            <div className="card-wrapper">
+                {error && {
+                    error
+                }}
+
+                {films && films.results.map((film, index) => (
+                    <div key={index} className="col-6">
+                        <Card>
+                            <Card.Body>
+                                <Card.Title className="text-center" as="h3">{film.title}</Card.Title>
+                                <hr />
+                                <Row className="episode" as="h5">
+                                    {`Episode ${film.episode_id}`}    
+                                </Row>
+                                <Row as ="h5">
+                                    {`Release Date: ${film.release_date}`}
+                                </Row>
+                                <hr />
+                                <Button
+                                as = {Link}
+                                to = {`/films/${GetURLId(film.url)}`}
+                                className="btn btn-dark"
+                                >
+                                    Read more ⭐️
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                ))}
+            </div>
         </>
     )
     }

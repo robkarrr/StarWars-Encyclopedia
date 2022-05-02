@@ -35,9 +35,10 @@ const Person = () => {
         <h1>{person.name}</h1>
 
         <div className="film-wrapper">
-          {films.map((film, index) => (
-            <ListGroup key={index}>
+          {films.map((film,index) => (
+            <ListGroup>
               <ListGroup.Item
+                key = {index}
                 as={Link}
                 to={`/films/${GetURLId(film)}`}
               >{`Film ${GetURLId(film)}`}</ListGroup.Item>

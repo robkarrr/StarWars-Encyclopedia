@@ -42,7 +42,8 @@ const Film = () => {
 
 
         <Card border="dark" className="mt-5">
-            <Card.Header>Films</Card.Header>
+            <Card.Header
+            >Films</Card.Header>
             <Card.Body>
             <Card.Title as="h2">{film.title}</Card.Title>
             <Card.Text>

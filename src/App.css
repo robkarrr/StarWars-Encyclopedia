@@ -1,7 +1,21 @@
-.card-wrapper {
-  flex-wrap: wrap;
-}
 
 .PageButton-wrapper{
   justify-content: space-between;
+}
+
+.row{
+  padding: 1rem;
+}
+
+.PageButton-wrapper{
+  margin: 1rem;
+}
+
+.card-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  margin: 0.5rem;
 }
