@@ -21,7 +21,6 @@ const Film = () => {
             setFilm(data)
             setPeople(data.characters)
             setLoading(false)
-            console.log(data)
         }catch(err){
             setError(err.message)
         }
@@ -50,8 +49,8 @@ const Film = () => {
                 Some quick example text to build on the card title and make up the bulk
                 of the card's content.
             </Card.Text>
-            {people.map(person => (
-                <ListGroup className="col-3">
+            {people.map((person, index) => (
+                <ListGroup key={index} className="col-3">
                 <ListGroup.Item
                     as={Link}
                     to={`/people/${GetURLId(person)}`}

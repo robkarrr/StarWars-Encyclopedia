@@ -39,22 +39,20 @@ const People = () => {
                 <h1 className="text-center mt-5">Loading...</h1>
             )}
             {people && people.results.map((person, index) => (
-                <>
-                    <div className="card-wrapper col-3">
-                        <Card key={index}>
+                
+                    <div key ={index} className="card-wrapper col-3">
+                        <Card>
                             <Card.Body>
                             <Card.Title>{person.name}</Card.Title>
                             <Button
                             as = {Link}
-                            to = {`/people/${GetURLId(person.url)}`}
+                                to = {`/people/${GetURLId(person.url)}`}
                             >
                                 Read more ➡
                             </Button>
                             </Card.Body>
                         </Card>
                     </div>
-
-                </>
 
             ))}
 

@@ -38,8 +38,8 @@ const Films = () => {
             )}
 
             {films && films.results.map((film, index) => (
-                <div>
-                    <Card key={index}>
+                <div key={index}>
+                    <Card>
                         <Card.Body>
                         <Card.Title>{film.title}</Card.Title>
                         <Button
