@@ -3,6 +3,23 @@ body{
   color: white ;
 }
 
+.home-page{
+  height: 50vh;
+  width: 60%;
+  margin:auto;
+  align-content: center;
+  margin-top: 20%;
+}
+
+.home-page-buttons{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.home-page div{
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
 .PageButton-wrapper{
   justify-content: space-between;
