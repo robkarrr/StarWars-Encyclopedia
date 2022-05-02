@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import SWAPI from '../services/SWAPI'
-import {Button, Row, Col, Card} from 'react-bootstrap'
+import {Button, Row, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { ListGroup } from 'react-bootstrap'
