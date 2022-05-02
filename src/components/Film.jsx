@@ -45,31 +45,64 @@ const Film = () => {
             <Card.Header
             >Films</Card.Header>
             <Card.Body>
-            <Card.Title as="h2">{film.title}</Card.Title>
+            <Card.Title as="h1">{film.title}</Card.Title>
+            <hr />
             <Card.Text>
-                Some quick example text to build on the card title and make up the bulk
-                of the card's content.
+                <h4>Description</h4>
+                {film.opening_crawl}
             </Card.Text>
-            {people.map((person, index) => (
-                <ListGroup key={index} className="col-3">
-                <ListGroup.Item
-                    as={Link}
-                    to={`/people/${GetURLId(person)}`}
-                    className=""
-                >{`Character ${GetURLId(person)}`}</ListGroup.Item>
-                </ListGroup>
-            ))}  
+
+            <hr />
+
+            <Card.Title>
+                <h4>General info</h4>
+            </Card.Title>            
+
+            <Row>
+                {`Episode ${film.episode_id}`}
+            </Row>
+            
+            <Row>
+                {`Producer: ${film.producer}`}
+            </Row>
+
+            <Row>
+                {`Director: ${film.director}`}
+            </Row>
+
+            <Row>
+                {`Release Date: ${film.release_date}`}
+            </Row>
+
+            <hr />
+
+            <Card.Title>
+                <h4>Characters seen in this film</h4>
+            </Card.Title>
+            <hr />
+            <div className="film-characters-wrapper">
+                {people.map((person, index) => (
+                    <ListGroup key={index} className="col-4 ">
+                    <ListGroup.Item
+                        as={Link}
+                        to={`/people/${GetURLId(person)}`}
+                        className=""
+                    >{`Character ${GetURLId(person)}`}</ListGroup.Item>
+                    </ListGroup>
+                ))}  
+            </div>
+            
             </Card.Body>
         </Card>
 
-        <div className="">
-                <Button
-                    as = {Link}
-                    to = {`/films`}
-                >
+        <div>
+             <Button
+                as = {Link}
+                to = {`/films`}
+            >
                     Back
-                </Button>
-            </div>
+            </Button>
+        </div>
     </>
   )
 }

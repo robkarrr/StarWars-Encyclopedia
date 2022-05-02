@@ -19,3 +19,13 @@
 .card{
   margin: 0.5rem;
 }
+
+.film-characters-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.list-group-item{
+  margin: 0.5rem;
+}
